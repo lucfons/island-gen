@@ -39,19 +39,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: TerrainGen
+all: island-gen
 
 # Tool invocations
-TerrainGen: $(OBJS) $(USER_OBJS)
+island-gen: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++ -L/usr/local/bin -L/usr/local/lib -framework Carbon  -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -o "TerrainGen" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/usr/local/bin -L/usr/local/lib -framework Carbon  -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -o "island-gen" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) TerrainGen
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) island-gen
 	-@echo ' '
 
 .PHONY: all clean dependents
