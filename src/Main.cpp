@@ -14,6 +14,8 @@ Main::Main() {
 	viewer.setSceneData(node);
 	viewer.setCameraManipulator(new osgGA::TrackballManipulator());
 	viewer.realize();
+	Heightmap test = Heightmap(128, 128);
+
 	while (!viewer.done()) {
 		viewer.frame();
 	}

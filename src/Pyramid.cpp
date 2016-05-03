@@ -67,6 +67,7 @@ Pyramid::Pyramid() {
 void Pyramid::drawPyramid(Group* Main) {
 
 	geo->addDrawable(new ShapeDrawable(new Sphere()));
+	/*
 	osg::StateSet* brickState = geo->getOrCreateStateSet();
 
 	       osg::Program* brickProgramObject = new osg::Program;
@@ -80,7 +81,9 @@ void Pyramid::drawPyramid(Group* Main) {
 	       misc.loadShaderSource( brickFragmentObject, "RWTBase.fsh" );
 	       osg::Uniform* resolutionU = new osg::Uniform("uResolution", osg::Vec2(480, 1000));
 	       brickState->addUniform(resolutionU);
-	       brickState->setAttributeAndModes(brickProgramObject, osg::StateAttribute::ON);
+
+	      brickState->setAttributeAndModes(brickProgramObject, osg::StateAttribute::ON);
+	*/
 	Main->addChild(geo);
 
 }

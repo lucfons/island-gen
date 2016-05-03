@@ -8,6 +8,7 @@
 #ifndef TERRAIN_HEIGHTMAP_H_
 #define TERRAIN_HEIGHTMAP_H_
 #include <math.h>
+#include <iostream>
 #include <vector>
 #include <osg/Geometry>
 #include <osg/Geode>

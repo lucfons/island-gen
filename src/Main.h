@@ -10,6 +10,7 @@
 #include <osg/Group>
 #include <osgViewer/viewer>
 #include "Pyramid.h"
+#include "Terrain/Heightmap.h"
 #include <osgGA/TrackballManipulator>
 #include "World.h"
 using namespace osg;

@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/Terrain/FastNoise/subdir.mk
 -include src/Terrain/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
@@ -39,19 +40,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: island-gen
+all: TerrainGen
 
 # Tool invocations
-island-gen: $(OBJS) $(USER_OBJS)
+TerrainGen: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++ -L/usr/local/bin -L/usr/local/lib -framework Carbon  -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -o "island-gen" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/usr/local/bin -L/usr/local/lib -framework Carbon  -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo -o "TerrainGen" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) island-gen
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) TerrainGen
 	-@echo ' '
 
 .PHONY: all clean dependents

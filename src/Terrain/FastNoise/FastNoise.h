@@ -118,7 +118,7 @@ protected:
 
 	CellularDistanceFunction m_cellularDistanceFunction = Euclidean;
 	CellularReturnType m_cellularReturnType = CellValue;
-	FastNoise* m_cellularNoiseLookup = nullptr;
+	FastNoise* m_cellularNoiseLookup = 0;
 
 	//3D
 	float _ValueFractalFBM(float x, float y, float z);
